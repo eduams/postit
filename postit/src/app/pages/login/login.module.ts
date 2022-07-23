@@ -1,3 +1,4 @@
+import { LogoComponent } from './../../components/logo/logo.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -17,6 +18,6 @@ import { LoginPage } from './login.page';
     LoginPageRoutingModule,
     HalfCircleSpinnerModule,
   ],
-  declarations: [LoginPage]
+  declarations: [LoginPage, LogoComponent]
 })
 export class LoginPageModule {}

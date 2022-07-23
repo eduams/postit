@@ -25,7 +25,7 @@ img{
   height: 75vh;
   transform: translateY(-20px);
 
-  img {
+  app-logo {
     width: 22%;
     height: 30%;
     object-fit: contain;
@@ -43,32 +43,13 @@ img{
     font-size: 0.95rem;
   }
 
-  input {
-    border: 1px solid #dbdbdb;
-    background-color: transparent;
-    outline: 0;
-    margin-bottom: 1rem;
-    border-radius: 20px;
-    padding: 0.8rem;
-    color: black;
-  }
-
   &--inputs{
     display: flex;
     flex-direction: column;
     width: 80%;
   }
 
-  ion-button {
-    --border-radius: 20px;
-    --background: #2D9FDB;
-    font-style: italic;
-    font-size: 0.8rem;
-    width: 80%;
-    height: 3rem;
-    margin-top: 2rem;
-    text-transform: capitalize;
-  }
+
   p{
     color: #707070;
     margin-top: 2rem;

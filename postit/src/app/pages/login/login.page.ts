@@ -1,3 +1,4 @@
+import { HelperService } from './../../services/helper.service';
 import { Component } from '@angular/core';
 import { AlertController, ToastController } from '@ionic/angular';
 
@@ -13,7 +14,8 @@ export interface LoginPayload{
 })
 export class LoginPage {
 
-  constructor(private readonly toastControler: ToastController,
+  constructor(
+    private readonly helper: HelperService,
     private readonly alertController: AlertController) {
    }
 
@@ -29,12 +31,8 @@ export class LoginPage {
 
   public async login(): Promise<void>{
     this.isLoading = true;
-
-    const toast = await this.toastControler.create({
-      message: 'Logando...',
-      duration: 2000,
-    });
-    toast.present();
+//toast
+await this.helper.showToast('Carregando...');
 //alert
     const alert = await this.alertController.create({
       header: 'Alert!',
@@ -58,5 +56,10 @@ export class LoginPage {
     return true;
     }
     else{return false}
+  }
+
+  public logoClick($event: boolean): void {
+    console.log($event);
+    console.log('clicou no logo')
   }
 }
