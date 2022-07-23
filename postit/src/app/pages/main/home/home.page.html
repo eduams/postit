@@ -1,9 +1,21 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>home</ion-title>
-  </ion-toolbar>
-</ion-header>
+<div class="home">
+  <header>
+    <img src="assets/imgs/login_logo.svg" alt="logo">
+  </header>
+  <main>
+    <ng-container *ngFor="let post of postItArray">
+    <app-postit (postitSelected)="printPostit($event)" [postit]="post"></app-postit>
+  </ng-container>
+  </main>
 
-<ion-content>
+  <div class="home--new=postit">
+    <div _ngcontent-hjr-c144 class="home--new-postit--item" (click)="consoleColor(postitColorEnum.ORANGE)"></div>
+    <div _ngcontent-hjr-c144 class="home--new-postit--item" (click)="consoleColor(postitColorEnum.BLUE)"></div>
+    <div _ngcontent-hjr-c144 class="home--new-postit--item" (click)="consoleColor(postitColorEnum.RED)"></div>
+    <div _ngcontent-hjr-c144 class="home--new-postit--item" (click)="consoleColor(postitColorEnum.ORANGE)"></div>
+    <div _ngcontent-hjr-c144 class="home--new-postit--item" (click)="consoleColor(postitColorEnum.YELLOW)"></div>
+    <div _ngcontent-hjr-c144 class="home--new-postit--item" (click)="consoleColor(postitColorEnum.GREEN)"></div>
 
-</ion-content>
+  </div>
+
+</div>
