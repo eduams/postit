@@ -30,21 +30,19 @@ export class LoginPage {
   public isLoading: boolean = false;
 
   public async login(): Promise<void>{
+    if(!this.canLogin())
+      return;
+
     this.isLoading = true;
 //toast
 await this.helper.showToast('Carregando...');
 //alert
-    const alert = await this.alertController.create({
-      header: 'Alert!',
-      buttons: [
-        {
-          text: 'OK',
-          role: 'confirm',
-          handler: () => { console.log('ok'); }
-        }
-      ]
-    })
-    alert.present();
+await this.helper.showAlert('Hello',[
+  {
+    text: 'ok',
+    handler: ()=> console.log('OK'),
+  }
+])
     console.log(this.loginPayload);
   }
   public canLogin(): boolean{

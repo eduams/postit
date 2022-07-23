@@ -7,9 +7,9 @@
 
     <div class= "container--inputs">
       <span>Email</span>
-      <input type="text" [(ngModel)]="loginPayload.email">
+      <input (keydown.enter)="password.focus()" type="text" [(ngModel)]="loginPayload.email">
       <span>Senha</span>
-      <input type="password" [(ngModel)]="loginPayload.password">
+      <input #password (keydown.enter)="login()" type="password" [(ngModel)]="loginPayload.password">
     </div>
     <ion-button [class.disabled]="!canLogin()" class="disabled" (click)="login()">{{ isLoading ? 'carregando' : 'confirmar' }}
       <app-half-circle-spinner *ngIf="isLoading"
