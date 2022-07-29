@@ -1,40 +1,16 @@
 <div class="postit-modal" [style.background-color]="color">
-
-  <span class="postit-modal--options" id="left-start">...</span>
-  <ion-popover trigger="left-start" side="left" alignment="start" dismiss-on-select>
-    <ng-template>
-      <ion-content class="ion-padding postit-modal--options-box">
-        <ion-list>
-          <ion-item button="true" detail="false" (click)="create = true">
-            <ion-label>Editar</ion-label>
-          </ion-item>
-          <ion-item button="true" detail="false">
-        <ion-label>Publicar no feed</ion-label>
-      </ion-item>
-      <ion-item button="true" detail="false">
-        <ion-label>Excluir nota</ion-label>
-      </ion-item>
-    </ion-list>
-      </ion-content>
-    </ng-template>
-  </ion-popover>
-  <span *ngIf="create" class="postit-modal--close" (click)="modalController.dismiss()">X
+  <span class="postit-modal--close" (click)="modalController.dismiss()">X
   </span>
-
 <header>
-<input [readOnly]="!create"
-class="postit-modal--title" type="text"
-[(ngModel)]="postIt.title"
-placeholder="Título da nota">
+<input class="postit-modal--title" type="text" [(ngModel)]="title" placeholder="Título da nota">
 
 </header>
 <main>
-  <textarea [readOnly]="!create"
-  class="postit-modal--annotation"
-  [(ngModel)]="postIt.annotation"
+  <textarea class="postit-modal--annotation"
+  [(ngModel)]="annotation"
   placeholder="Conteúdo da nota"></textarea>
 </main>
 <footer>
-<span (click)="savePostIt()">Colar no mural</span>
+<span>Colar no mural</span>
 </footer>
 </div>

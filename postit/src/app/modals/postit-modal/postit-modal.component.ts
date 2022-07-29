@@ -1,5 +1,3 @@
-import { PostItPayload } from './../../models/payloads/postit.payload';
-import { PostitProxy } from './../../models/proxies/postit.proxy';
 import { PostitColorEnum } from 'src/app/models/enums/postit-color.enum';
 import { ModalController } from '@ionic/angular';
 import { Component, Input, OnInit } from '@angular/core';
@@ -16,30 +14,12 @@ export class PostitModalComponent implements OnInit {
   ) { }
 
 @Input()
-public color: PostitColorEnum;
+public color: PostitColorEnum = PostitColorEnum.BLUE;
 
+    public title: string='';
 
-@Input()
-public create: boolean = false;
+    public annotation: string='';
 
-@Input()
-    public postIt: PostItPayload ={
-      id: 6,
-      title: '',
-      annotation: '',
-      color: PostitColorEnum.BLUE
-    };
-
-
-  ngOnInit() {
-    if(!this.color){
-      this.color = this.postIt.color;
-    }
-  }
-
-  public savePostIt(): void{
-    this.postIt.color = this.color;
-    this.modalController.dismiss(this.postIt);
-  }
+  ngOnInit() {}
 
 }
