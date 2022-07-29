@@ -1,3 +1,4 @@
+import { PostItModalModule } from 'src/app/modals/postit-modal/postit-modal.module';
 import { PostItModule } from './../../../components/postit/postit.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -15,7 +16,8 @@ import { HomePage } from './home.page';
     FormsModule,
     IonicModule,
     HomePageRoutingModule,
-    PostItModule
+    PostItModule,
+    PostItModalModule
   ],
   declarations: [HomePage]
 })

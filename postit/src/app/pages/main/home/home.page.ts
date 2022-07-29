@@ -1,3 +1,5 @@
+import { PostitModalComponent } from './../../../modals/postit-modal/postit-modal.component';
+import { ModalController } from '@ionic/angular';
 import { PostitColorEnum } from './../../../models/enums/postit-color.enum';
 import { PostitProxy } from './../../../models/proxies/postit.proxy';
 import { Component, OnInit } from '@angular/core';
@@ -9,7 +11,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePage implements OnInit {
 
-  constructor() { }
+  constructor(
+    public modalController: ModalController
+  ) { }
 
 
 
@@ -59,6 +63,16 @@ export class HomePage implements OnInit {
 
   public printPostit(event: PostitProxy): void{
 console.log(event);
+  }
+
+  public async openNewPostModal(color: string): Promise<void>{
+    const modal = await this.modalController.create({
+      component: PostitModalComponent,
+      cssClass: 'background-modal',
+      componentProps: {color},
+    });
+
+await modal.present();
   }
 
 }
