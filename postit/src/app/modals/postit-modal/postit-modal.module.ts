@@ -14,9 +14,9 @@ import { NgModule } from "@angular/core";
     CommonModule,
     IonicModule,
     FormsModule
-
   ],
   exports: [
+
 
   ],
 

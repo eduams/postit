@@ -4,7 +4,10 @@
   </header>
   <main>
     <ng-container *ngFor="let post of postItArray">
-    <app-postit (postitSelected)="printPostit($event)" [postit]="post"></app-postit>
+    <app-postit (postitSelected)="printPostit($event)"
+    [postit]="post"
+    (click)="openPostModal(post)"
+    ></app-postit>
   </ng-container>
   </main>
 

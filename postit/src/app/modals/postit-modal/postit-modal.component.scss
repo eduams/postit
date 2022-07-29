@@ -14,7 +14,7 @@
 
   &--close{
     position: relative;
-    left: 90%;
+    left: 80%;
 
     font-size: 2rem;
   }
@@ -52,6 +52,11 @@
       font-weight: bold;
       color: #707070
     }
+  }
+
+  &--options{
+    font-size: 2rem;
+    position: relative;
   }
 
 }
